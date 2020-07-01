@@ -1,0 +1,27 @@
+{
+  "name": "@nebulis.io/pulumi-lambda-resource",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "prepare": "npm run build",
+    "build": "rimraf ./build && tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.nwmqpa.com:akyre/cloud/pulumi-lambda-resource.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^3.9.5"
+  },
+  "dependencies": {
+    "@pulumi/aws": "^2.11.0",
+    "@pulumi/pulumi": "^2.5.0"
+  }
+}
