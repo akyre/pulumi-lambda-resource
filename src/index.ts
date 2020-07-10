@@ -52,7 +52,7 @@ export class LambdaResouce extends ComponentResource {
     readonly role: Output<string>;
     readonly environment?: Output<aws.types.input.lambda.FunctionEnvironment>;
     readonly fileArchive: Promise<pulumi.asset.FileArchive>;
-    readonly function: Output<aws.lambda.Function>;
+    readonly function: aws.lambda.Function;
 
     /**
      * Component dedicated to create lambdas from non compiled directory
@@ -87,7 +87,7 @@ export class LambdaResouce extends ComponentResource {
 
         this.fileArchive = promise.then(_ => new pulumi.asset.FileArchive(`${args.directory}/bundle.zip`))
 
-        this.function = pulumi.output(new aws.lambda.Function(name, {
+        this.function = new aws.lambda.Function(name, {
             handler: this.handler,
             code: this.fileArchive,
             runtime: this.runtime,
@@ -95,7 +95,7 @@ export class LambdaResouce extends ComponentResource {
             environment: this.environment
         }, {
             parent: this
-        }))
+        })
 
         this.registerOutputs({
             function: this.function,
