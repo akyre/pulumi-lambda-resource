@@ -1,9 +1,9 @@
 {
   "name": "@nebulis.io/pulumi-lambda-resource",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "index.js",
+  "types": "index.d.ts",
   "scripts": {
     "prepare": "npm run build",
     "build": "rimraf ./build && tsc",
